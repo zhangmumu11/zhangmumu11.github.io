@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content=#58b77a>
-  <title>blog</title>
+  <title>博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="张 木木">
   <meta name="keywords" content="">
@@ -69,7 +69,7 @@
   <div class="featured">
     <div class="avatar"><a href="/"><img src="/images/avatar.jpeg"></a></div>
     <span>张 木木</span>
-    <h1>blog</h1>
+    <h1>博客</h1>
     
     
   </div>
@@ -81,33 +81,57 @@
 
   <div class="lx-entry padding">
     <div>
-      <h2 class="title"><a href="/2020/04/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E6%A1%A3/">第一篇文档</a></h2>
-      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-07</span>
-      <p><p>随便写点东西</p>
-<p>写东西重新部署测试</p>
-</p>
-      <div class="post-button"><a class="btn" href="/2020/04/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E6%A1%A3/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
+      <h2 class="title"><a href="/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/">docker软件部署</a></h2>
+      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-13</span>
+      <p></p>
+      <div class="post-button"><a class="btn" href="/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
     </div>
   </div>
   <div class="lx-entry padding">
     <div>
-      <h2 class="title"><a href="/2020/04/07/hello-world/">Hello World</a></h2>
+      <h2 class="title"><a href="/2020/04/07/docker%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/">docker常见命令</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-07</span>
-      <p><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+      <p><h1 id="docker-学习过程笔记"><a href="#docker-学习过程笔记" class="headerlink" title="docker 学习过程笔记"></a>docker 学习过程笔记</h1><h2 id="第一章docker-镜像命令"><a href="#第一章docker-镜像命令" class="headerlink" title="第一章docker 镜像命令"></a>第一章docker 镜像命令</h2><p>拉取   docker pull 镜像名称</p>
+<p>删除   docker rmi   imageID（镜像id）</p>
+<p>查看   docker images</p>
+<h2 id="第二章docker容器命令"><a href="#第二章docker容器命令" class="headerlink" title="第二章docker容器命令"></a>第二章docker容器命令</h2><p>docker ps 查看运行中的</p>
+<p>docker ps -a 查看所有的容器</p>
+<h3 id="1-创建与启动容器"><a href="#1-创建与启动容器" class="headerlink" title="1.创建与启动容器"></a>1.创建与启动容器</h3><p>创建容器 docker run </p>
+<p>-i 运行的容器</p>
+<p>-t 创建容器之后进去其命令行，加入-it之后，及分配一个伪客户端</p>
+<p>-v 表示目录映射关系（java：java）前者是宿主机目录，后者是映射到宿主机的目录即为容器目录</p>
+<p>  可以使用多个-v 做多个文件或目录的映射。最好做目录映射，在宿主机上修改，然后共享到容器上。</p>
+<p>-d 创建一个守护式进程的容器在后台运行（这样创建容器不会自动登录容器，如果加上-it 参数，则会自动进入容器）</p>
+<p>-p 表示端口映射，前者是宿主机端口，后者是容器内映射的端口，可以使用多个-p 做多个端口映射。</p>
+<h3 id="2-交互式创建容器"><a href="#2-交互式创建容器" class="headerlink" title="2.交互式创建容器"></a>2.交互式创建容器</h3><p>docker -it –name=mycentos centos:7 /bin/bash</p>
+<p>创建完之后即进入容器内部</p>
+<h3 id="3-守护式创建容器"><a href="#3-守护式创建容器" class="headerlink" title="3.守护式创建容器"></a>3.守护式创建容器</h3><p>docker run -di –name=mycentos2 centos</p>
+<p>创建完之后出现很长一段字符串则为创建成功</p>
+<p>a830d8160184e2ea71de07dc81fa3bb12963ded775cadbf0b6874b6a5a5eac82</p>
+<p>创建完之后则不会进入容器</p>
+<h3 id="4-登录守护式容器"><a href="#4-登录守护式容器" class="headerlink" title="4.登录守护式容器"></a>4.登录守护式容器</h3><p>docker exec -it 容器名称 /bin/bash</p>
+<p>进入容器中的/bin/bash 目录</p>
+<h3 id="5-退出容器"><a href="#5-退出容器" class="headerlink" title="5.退出容器"></a>5.退出容器</h3><p>容器中 exit</p>
+<p>交互式创建的容器在退出之后即关闭容器</p>
+<p>守护式不会</p>
+<h3 id="6-停止与启动容器"><a href="#6-停止与启动容器" class="headerlink" title="6.停止与启动容器"></a>6.停止与启动容器</h3><h4 id="6-1停止容器"><a href="#6-1停止容器" class="headerlink" title="6.1停止容器"></a>6.1停止容器</h4><p>docker stop 容器名称（或者容器id）</p>
+<h4 id="6-2启动容器"><a href="#6-2启动容器" class="headerlink" title="6.2启动容器"></a>6.2启动容器</h4><p>docker start 容器名称（或者容器id）</p>
+<h3 id="7-文件拷贝"><a href="#7-文件拷贝" class="headerlink" title="7.文件拷贝"></a>7.文件拷贝</h3><p>将文件拷贝到容器mycentos中/usr/local目录中</p>
+<p>docker cp 文件当前的路径   mycontos:/usr/local</p>
+<p>将docker容器中的文件任意拷贝到宿主机</p>
+<p>docker cp mycontos:/usr/local   文件路径和名称</p>
+<h3 id="8-目录挂载"><a href="#8-目录挂载" class="headerlink" title="8.目录挂载"></a>8.目录挂载</h3><p>将容器中的目录映射到宿主机上的目录，这样就可以通过修改宿主机上的文件来修改容器中的文件</p>
+<p>加上 -v 参数</p>
+<p>–docker run -di –name=mycentos2  -v  /usr/local/myhtml:/usr/local/myhtml centos”</p>
+<h3 id="9-查看容器的ip地址"><a href="#9-查看容器的ip地址" class="headerlink" title="9.查看容器的ip地址"></a>9.查看容器的ip地址</h3><p>docker inspect 容器名称（容器id）</p>
+<p>查看容器的所有新信息</p>
+<p>格式化输出想要的数据</p>
+<p> –docker inspect –format=.NetworkSettings.IPAddress mycentos2</p>
+<p>format中的参数用大括号括起来</p>
+<h3 id="10-删除容器"><a href="#10-删除容器" class="headerlink" title="10.删除容器"></a>10.删除容器</h3><p> –docker rm 容器名称（容器id）</p>
+<p>删除之前必须停止容器  docker stop 容器名称（容器id）</p>
 </p>
-      <div class="post-button"><a class="btn" href="/2020/04/07/hello-world/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
+      <div class="post-button"><a class="btn" href="/2020/04/07/docker%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
     </div>
   </div>
 
@@ -116,7 +140,7 @@
 
 <footer>
   <div>
-  Copyright &copy; 2019.<a href="/">blog</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
+  Copyright &copy; 2019.<a href="/">博客</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
   </div>
 </footer>
 
