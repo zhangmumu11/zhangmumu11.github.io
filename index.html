@@ -83,7 +83,38 @@
     <div>
       <h2 class="title"><a href="/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/">docker软件部署</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-13</span>
-      <p></p>
+      <p><h1 id="应用部署"><a href="#应用部署" class="headerlink" title="应用部署"></a>应用部署</h1><h2 id="mysql部署"><a href="#mysql部署" class="headerlink" title="mysql部署"></a>mysql部署</h2><p>1.拉取镜像</p>
+<p>docker pull mysql</p>
+<p>2.创建容器</p>
+<p>docker run -di –name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql</p>
+<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
+<p>-e 代表添加环境变量 MYSQL_ROOT_PASSWORD 是root用户的登录密码</p>
+<p>3.进入sql容器</p>
+<p>docker exec -it mysql /bin/bash</p>
+<p>4.登录mysql</p>
+<p>mysql -u root -p </p>
+<p>5.远程登录mysql</p>
+<h2 id="tomcat部署"><a href="#tomcat部署" class="headerlink" title="tomcat部署"></a>tomcat部署</h2><p>1.拉取镜像</p>
+<p>docker pull tomcat</p>
+<p>2.创建容器</p>
+<p>docker run -di –name=mytomcat -p 8081:8080 -v /usr/local/webapps:/usr/local/tomcat/webapps tomcat</p>
+<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
+<p>-v 代目录映射</p>
+<p>3.进入sql容器</p>
+<p>docker exec -it mytomcat /bin/bash</p>
+<h2 id="nginx部署"><a href="#nginx部署" class="headerlink" title="nginx部署"></a>nginx部署</h2><p>1.拉取镜像</p>
+<p>docker pull nginx</p>
+<p>2.创建容器</p>
+<p>docker run -di –name=mynginx -p 80:80 nginx</p>
+<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
+<p>主要修改config文件</p>
+<h3 id="redis部署"><a href="#redis部署" class="headerlink" title="redis部署"></a>redis部署</h3><p>1.拉取镜像</p>
+<p>docker pull redis</p>
+<p>2.创建容器</p>
+<p>docker run -di –name=myredis -p 6379:6379 redis</p>
+<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
+<p>主要修改config文件</p>
+</p>
       <div class="post-button"><a class="btn" href="/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
     </div>
   </div>
@@ -122,7 +153,7 @@
 <p>docker cp mycontos:/usr/local   文件路径和名称</p>
 <h3 id="8-目录挂载"><a href="#8-目录挂载" class="headerlink" title="8.目录挂载"></a>8.目录挂载</h3><p>将容器中的目录映射到宿主机上的目录，这样就可以通过修改宿主机上的文件来修改容器中的文件</p>
 <p>加上 -v 参数</p>
-<p>–docker run -di –name=mycentos2  -v  /usr/local/myhtml:/usr/local/myhtml centos”</p>
+<p>–docker run -di –name=mycentos2  -v  /usr/local/myhtml:/usr/local/myhtml centos</p>
 <h3 id="9-查看容器的ip地址"><a href="#9-查看容器的ip地址" class="headerlink" title="9.查看容器的ip地址"></a>9.查看容器的ip地址</h3><p>docker inspect 容器名称（容器id）</p>
 <p>查看容器的所有新信息</p>
 <p>格式化输出想要的数据</p>

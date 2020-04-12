@@ -80,7 +80,38 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        
+        <h1 id="应用部署"><a href="#应用部署" class="headerlink" title="应用部署"></a>应用部署</h1><h2 id="mysql部署"><a href="#mysql部署" class="headerlink" title="mysql部署"></a>mysql部署</h2><p>1.拉取镜像</p>
+<p>docker pull mysql</p>
+<p>2.创建容器</p>
+<p>docker run -di –name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql</p>
+<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
+<p>-e 代表添加环境变量 MYSQL_ROOT_PASSWORD 是root用户的登录密码</p>
+<p>3.进入sql容器</p>
+<p>docker exec -it mysql /bin/bash</p>
+<p>4.登录mysql</p>
+<p>mysql -u root -p </p>
+<p>5.远程登录mysql</p>
+<h2 id="tomcat部署"><a href="#tomcat部署" class="headerlink" title="tomcat部署"></a>tomcat部署</h2><p>1.拉取镜像</p>
+<p>docker pull tomcat</p>
+<p>2.创建容器</p>
+<p>docker run -di –name=mytomcat -p 8081:8080 -v /usr/local/webapps:/usr/local/tomcat/webapps tomcat</p>
+<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
+<p>-v 代目录映射</p>
+<p>3.进入sql容器</p>
+<p>docker exec -it mytomcat /bin/bash</p>
+<h2 id="nginx部署"><a href="#nginx部署" class="headerlink" title="nginx部署"></a>nginx部署</h2><p>1.拉取镜像</p>
+<p>docker pull nginx</p>
+<p>2.创建容器</p>
+<p>docker run -di –name=mynginx -p 80:80 nginx</p>
+<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
+<p>主要修改config文件</p>
+<h3 id="redis部署"><a href="#redis部署" class="headerlink" title="redis部署"></a>redis部署</h3><p>1.拉取镜像</p>
+<p>docker pull redis</p>
+<p>2.创建容器</p>
+<p>docker run -di –name=myredis -p 6379:6379 redis</p>
+<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
+<p>主要修改config文件</p>
+
       </div>
     </div>
   </div>
