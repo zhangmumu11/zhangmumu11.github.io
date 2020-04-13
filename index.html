@@ -1,256 +1,409 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=en>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme-color" content=#58b77a>
-  <title>博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="张 木木">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
-  <script id="hexo-configurations">
-  var CONFIG = {
-    root: '/',
-    theme: 'hexo-theme-lx',
-    version: '0.3.9',
-    localsearch:{
-      "enable": false,
-      "trigger": "auto",
-      "top_n_per_article": 1,
-      "unescape": false,
-      "preload": false
-      },
-    path: 'null'
-  };
-</script>
-
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/main.min.css">
-  <style type="text/css">
-    pre,
-    code {
-      font-family: 'Fira Code', monospace;
-    }
-    html {
-      font-family: sans-serif;
-    }
-    body {
-      font-family: sans-serif;
-    }
-    h1, h2, h3, h4, h5, figure {
-      font-family: sans-serif;
-    }
-    .menu-container{
-      font-family: sans-serif;
-    }
-  </style>
-
-  <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.jside.menu.js"></script>
-	<script>
-	$(document).ready(function(){
-	$(".menu-container").jSideMenu({
-	    jSidePosition: "position-right",
-	    jSideSticky: true,
-	    jSideSkin: "greenish",
-	     });
-	}); 
-	</script>
+  <meta charset="utf-8">
   
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Hexo</title>
+  <meta property="og:type" content="website">
+<meta property="og:title" content="博客">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="张 木木">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
 <meta name="generator" content="Hexo 4.2.0"></head>
-<body>
-<div id="page">
-
-<div id="lx-aside" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/cover.jpeg)">
-  <div class="overlay">
-  <div class="featured">
-    <div class="avatar"><a href="/"><img src="/images/avatar.jpeg"></a></div>
-    <span>张 木木</span>
-    <h1>博客</h1>
-    
-    
-  </div>
-  </div>
-</div>
-
-<div id="lx-main-content">
-  <div class="lx-post">
-
-  <div class="lx-entry padding">
-    <div>
-      <h2 class="title"><a href="/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/">docker软件部署</a></h2>
-      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-13</span>
-      <p><h1 id="应用部署"><a href="#应用部署" class="headerlink" title="应用部署"></a>应用部署</h1><h2 id="mysql部署"><a href="#mysql部署" class="headerlink" title="mysql部署"></a>mysql部署</h2><p>1.拉取镜像</p>
-<p>docker pull mysql</p>
-<p>2.创建容器</p>
-<p>docker run -di –name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql</p>
-<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
-<p>-e 代表添加环境变量 MYSQL_ROOT_PASSWORD 是root用户的登录密码</p>
-<p>3.进入sql容器</p>
-<p>docker exec -it mysql /bin/bash</p>
-<p>4.登录mysql</p>
-<p>mysql -u root -p </p>
-<p>5.远程登录mysql</p>
-<h2 id="tomcat部署"><a href="#tomcat部署" class="headerlink" title="tomcat部署"></a>tomcat部署</h2><p>1.拉取镜像</p>
-<p>docker pull tomcat</p>
-<p>2.创建容器</p>
-<p>docker run -di –name=mytomcat -p 8081:8080 -v /usr/local/webapps:/usr/local/tomcat/webapps tomcat</p>
-<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
-<p>-v 代目录映射</p>
-<p>3.进入sql容器</p>
-<p>docker exec -it mytomcat /bin/bash</p>
-<h2 id="nginx部署"><a href="#nginx部署" class="headerlink" title="nginx部署"></a>nginx部署</h2><p>1.拉取镜像</p>
-<p>docker pull nginx</p>
-<p>2.创建容器</p>
-<p>docker run -di –name=mynginx -p 80:80 nginx</p>
-<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
-<p>主要修改config文件</p>
-<h3 id="redis部署"><a href="#redis部署" class="headerlink" title="redis部署"></a>redis部署</h3><p>1.拉取镜像</p>
-<p>docker pull redis</p>
-<p>2.创建容器</p>
-<p>docker run -di –name=myredis -p 6379:6379 redis</p>
-<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
-<p>主要修改config文件</p>
-</p>
-      <div class="post-button"><a class="btn" href="/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
-    </div>
-  </div>
-  <div class="lx-entry padding">
-    <div>
-      <h2 class="title"><a href="/2020/04/07/docker%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/">docker常见命令</a></h2>
-      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-07</span>
-      <p><h1 id="docker-学习过程笔记"><a href="#docker-学习过程笔记" class="headerlink" title="docker 学习过程笔记"></a>docker 学习过程笔记</h1><h2 id="第一章docker-镜像命令"><a href="#第一章docker-镜像命令" class="headerlink" title="第一章docker 镜像命令"></a>第一章docker 镜像命令</h2><p>拉取   docker pull 镜像名称</p>
-<p>删除   docker rmi   imageID（镜像id）</p>
-<p>查看   docker images</p>
-<h2 id="第二章docker容器命令"><a href="#第二章docker容器命令" class="headerlink" title="第二章docker容器命令"></a>第二章docker容器命令</h2><p>docker ps 查看运行中的</p>
-<p>docker ps -a 查看所有的容器</p>
-<h3 id="1-创建与启动容器"><a href="#1-创建与启动容器" class="headerlink" title="1.创建与启动容器"></a>1.创建与启动容器</h3><p>创建容器 docker run </p>
-<p>-i 运行的容器</p>
-<p>-t 创建容器之后进去其命令行，加入-it之后，及分配一个伪客户端</p>
-<p>-v 表示目录映射关系（java：java）前者是宿主机目录，后者是映射到宿主机的目录即为容器目录</p>
-<p>  可以使用多个-v 做多个文件或目录的映射。最好做目录映射，在宿主机上修改，然后共享到容器上。</p>
-<p>-d 创建一个守护式进程的容器在后台运行（这样创建容器不会自动登录容器，如果加上-it 参数，则会自动进入容器）</p>
-<p>-p 表示端口映射，前者是宿主机端口，后者是容器内映射的端口，可以使用多个-p 做多个端口映射。</p>
-<h3 id="2-交互式创建容器"><a href="#2-交互式创建容器" class="headerlink" title="2.交互式创建容器"></a>2.交互式创建容器</h3><p>docker -it –name=mycentos centos:7 /bin/bash</p>
-<p>创建完之后即进入容器内部</p>
-<h3 id="3-守护式创建容器"><a href="#3-守护式创建容器" class="headerlink" title="3.守护式创建容器"></a>3.守护式创建容器</h3><p>docker run -di –name=mycentos2 centos</p>
-<p>创建完之后出现很长一段字符串则为创建成功</p>
-<p>a830d8160184e2ea71de07dc81fa3bb12963ded775cadbf0b6874b6a5a5eac82</p>
-<p>创建完之后则不会进入容器</p>
-<h3 id="4-登录守护式容器"><a href="#4-登录守护式容器" class="headerlink" title="4.登录守护式容器"></a>4.登录守护式容器</h3><p>docker exec -it 容器名称 /bin/bash</p>
-<p>进入容器中的/bin/bash 目录</p>
-<h3 id="5-退出容器"><a href="#5-退出容器" class="headerlink" title="5.退出容器"></a>5.退出容器</h3><p>容器中 exit</p>
-<p>交互式创建的容器在退出之后即关闭容器</p>
-<p>守护式不会</p>
-<h3 id="6-停止与启动容器"><a href="#6-停止与启动容器" class="headerlink" title="6.停止与启动容器"></a>6.停止与启动容器</h3><h4 id="6-1停止容器"><a href="#6-1停止容器" class="headerlink" title="6.1停止容器"></a>6.1停止容器</h4><p>docker stop 容器名称（或者容器id）</p>
-<h4 id="6-2启动容器"><a href="#6-2启动容器" class="headerlink" title="6.2启动容器"></a>6.2启动容器</h4><p>docker start 容器名称（或者容器id）</p>
-<h3 id="7-文件拷贝"><a href="#7-文件拷贝" class="headerlink" title="7.文件拷贝"></a>7.文件拷贝</h3><p>将文件拷贝到容器mycentos中/usr/local目录中</p>
-<p>docker cp 文件当前的路径   mycontos:/usr/local</p>
-<p>将docker容器中的文件任意拷贝到宿主机</p>
-<p>docker cp mycontos:/usr/local   文件路径和名称</p>
-<h3 id="8-目录挂载"><a href="#8-目录挂载" class="headerlink" title="8.目录挂载"></a>8.目录挂载</h3><p>将容器中的目录映射到宿主机上的目录，这样就可以通过修改宿主机上的文件来修改容器中的文件</p>
-<p>加上 -v 参数</p>
-<p>–docker run -di –name=mycentos2  -v  /usr/local/myhtml:/usr/local/myhtml centos</p>
-<h3 id="9-查看容器的ip地址"><a href="#9-查看容器的ip地址" class="headerlink" title="9.查看容器的ip地址"></a>9.查看容器的ip地址</h3><p>docker inspect 容器名称（容器id）</p>
-<p>查看容器的所有新信息</p>
-<p>格式化输出想要的数据</p>
-<p> –docker inspect –format=.NetworkSettings.IPAddress mycentos2</p>
-<p>format中的参数用大括号括起来</p>
-<h3 id="10-删除容器"><a href="#10-删除容器" class="headerlink" title="10.删除容器"></a>10.删除容器</h3><p> –docker rm 容器名称（容器id）</p>
-<p>删除之前必须停止容器  docker stop 容器名称（容器id）</p>
-</p>
-      <div class="post-button"><a class="btn" href="/2020/04/07/docker%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
-    </div>
-  </div>
 
 
-
-
-<footer>
-  <div>
-  Copyright &copy; 2019.<a href="/">博客</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
-  </div>
-</footer>
-
-  </div>
-</div>
-</div>
-
-<button class="hamburger hamburger--arrow-r" type="button">
-    <div class="hamburger-box">
-      <div class="hamburger-inner"></div>
-    </div>
-</button> 
-<div class="menu visibility">
-  <div class="menu-head">
-    <span class="layer">
-      <div class="col">
-        <div class="row for-pic">
-          <div class="profile-pic">
-            <a href="/"><img src="/images/avatar.jpeg" alt="张 木木"/></a>
-          </div>
-        </div>
-        <div class="row for-name">
-          <p>张 木木</p>
-          <span class="tagline">Hello, World!</span>
-        </div>
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">昵称</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shenzhen, China</small>
       </div>
-    </span>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
   </div>
-  <nav class="menu-container">
-  <ul class="menu-items">
-    <li><a href="/"><i class="fa fa-home fa-fw"></i>Home</a></li>
-    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
-    
-    <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-bookmark fa-fw"></i>Pages</span>
-        <ul>
-          <li><a href="/guestbook/">Guestbook</a></li>
-        <li><a href="/about/">About</a></li>
-        </ul>
-    </li>
-    <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-link fa-fw"></i>Friends</span>
-        <ul>
-          <li> <a href="https://lx.js.org" target="_blank">Theme-Lx</a></li>
-        </ul>
-    </li>
-  </ul>
-  </nav>
 </div>
 
-<div class="gototop js-top">
-  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+
 </div>
-<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.easing.min.js"></script>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/" class="title">docker软件部署</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-04-12T16:17:55.364Z" itemprop="datePublished">2020-04-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/04/07/docker%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" class="title">docker常见命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-04-07T03:53:56.444Z" itemprop="datePublished">2020-04-07</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  <main class="main" role="main">
+  
+  <div class="content article-list">
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/">docker软件部署</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/" class="article-date">
+	  <time datetime="2020-04-12T16:17:55.364Z" itemprop="datePublished">Apr 13</time>
+	</a>
+</span>
+    
+    
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/07/docker%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/">docker常见命令</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/04/07/docker%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" class="article-date">
+	  <time datetime="2020-04-07T03:53:56.444Z" itemprop="datePublished">Apr 7</time>
+	</a>
+</span>
+    
+    
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/07/docker%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+  </div>
+
+   
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
 <script>
-(function () {
-	"use strict";
-	var goToTop = function() {
-		$(".js-gotop").on("click", function(event){
-			event.preventDefault();
-			$("html, body").animate({
-				scrollTop: $("html").offset().top
-			}, 500, "easeInOutExpo");
-			return false;
-		});
-		$(window).scroll(function(){
-			var $win = $(window);
-			if ($win.scrollTop() > 200) {
-				$(".js-top").addClass("active");
-			} else {
-				$(".js-top").removeClass("active");
-			}
-		});
-	};
-	$(function(){
-		goToTop();
-	});
-}());
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
 
 
 </body>
