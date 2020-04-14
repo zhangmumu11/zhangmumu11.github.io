@@ -17,20 +17,20 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>docker学习之路 | Hexo</title>
-  <meta name="description" content="###容器保存为镜像 docker 备份与迁移 commit 将容器保存为镜像  docker commit (mynginx)容器名称 （mynginx_i）镜像名称 ###镜像备份 save -o 将将进行镜像保存为tar文件 dockers save -o mynginx.tar mynginx_i ###镜像的恢复与迁移 首先删掉mynginx镜像  rm 然后执行命令进行回复 docke">
+  <title>docker备份与迁移 | Hexo</title>
+  <meta name="description" content="容器保存为镜像docker 备份与迁移 commit 将容器保存为镜像  docker commit (mynginx)容器名称 （mynginx_i）镜像名称 ###镜像备份 save -o 将将进行镜像保存为tar文件 dockers save -o mynginx.tar mynginx_i ###镜像的恢复与迁移 首先删掉mynginx镜像  rm 然后执行命令进行回复 docker lo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker学习之路">
-<meta property="og:url" content="http://yoursite.com/2020/04/14/docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/index.html">
+<meta property="og:title" content="docker备份与迁移">
+<meta property="og:url" content="http://yoursite.com/2020/04/14/docker%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="###容器保存为镜像 docker 备份与迁移 commit 将容器保存为镜像  docker commit (mynginx)容器名称 （mynginx_i）镜像名称 ###镜像备份 save -o 将将进行镜像保存为tar文件 dockers save -o mynginx.tar mynginx_i ###镜像的恢复与迁移 首先删掉mynginx镜像  rm 然后执行命令进行回复 docke">
+<meta property="og:description" content="容器保存为镜像docker 备份与迁移 commit 将容器保存为镜像  docker commit (mynginx)容器名称 （mynginx_i）镜像名称 ###镜像备份 save -o 将将进行镜像保存为tar文件 dockers save -o mynginx.tar mynginx_i ###镜像的恢复与迁移 首先删掉mynginx镜像  rm 然后执行命令进行回复 docker lo">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-14T00:58:52.720Z">
-<meta property="article:modified_time" content="2020-04-14T00:56:54.252Z">
+<meta property="article:modified_time" content="2020-04-14T02:29:05.003Z">
 <meta property="article:author" content="张 木木">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2020/04/14/docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/index.html">
+  <link rel="canonical" href="http://yoursite.com/2020/04/14/docker%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/index.html">
   
     <link rel="alternate" href="/atom.xml" title="博客" type="application/atom+xml">
   
@@ -64,27 +64,14 @@
       
       <div class="search" id="search-form-wrap">
 
-    <form class="search-form sidebar-form">
-        <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="搜索" />
-            <span class="input-group-btn">
-                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
-            </span>
-        </div>
-    </form>
-    <div class="ins-search">
-  <div class="ins-search-mask"></div>
-  <div class="ins-search-container">
-    <div class="ins-input-wrapper">
-      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
-      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    <form class="search-form sidebar-form" method="GET" action="https://www.baidu.com/s?">
+	<div class="input-group">
+    	<input name="wd" type="text" class="form-control search-form-input" placeholder="搜索" />
+	    <span class="input-group-btn">
+	    	<button type="submit" class=" btn btn-flat search-form-submit"><i class="icon icon-search"></i></button>
+	    </span>
     </div>
-    <div class="ins-section-wrapper">
-      <div class="ins-section-container"></div>
-    </div>
-  </div>
-</div>
-
+</form>
 
 </div>
       <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
@@ -245,7 +232,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2020/04/14/docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" class="title">docker学习之路</a>
+                <a href="/2020/04/14/docker%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/" class="title">docker备份与迁移</a>
               </p>
               <p class="item-date">
                 <time datetime="2020-04-14T00:58:52.720Z" itemprop="datePublished">2020-04-14</time>
@@ -311,14 +298,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-docker学习之路" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-docker备份与迁移" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      docker学习之路
+      docker备份与迁移
     </h1>
   
 
@@ -326,7 +313,7 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/14/docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" class="article-date">
+	<a href="/2020/04/14/docker%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/" class="article-date">
 	  <time datetime="2020-04-14T00:58:52.720Z" itemprop="datePublished">2020-04-14</time>
 	</a>
 </span>
@@ -335,14 +322,13 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/14/docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/14/docker%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>###容器保存为镜像</p>
-<p>docker 备份与迁移</p>
+        <h3 id="容器保存为镜像"><a href="#容器保存为镜像" class="headerlink" title="容器保存为镜像"></a>容器保存为镜像</h3><p>docker 备份与迁移</p>
 <p>commit 将容器保存为镜像 </p>
 <p>docker commit (mynginx)容器名称 （mynginx_i）镜像名称</p>
 <p>###镜像备份</p>
@@ -409,7 +395,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2020/04/14/docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" title="docker学习之路" target="_blank" rel="external">http://yoursite.com/2020/04/14/docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</a>
+      <a href="http://yoursite.com/2020/04/14/docker%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/" title="docker备份与迁移" target="_blank" rel="external">http://yoursite.com/2020/04/14/docker%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -560,26 +546,16 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 <script src="/js/application.js"></script>
 
 
+
     <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
+(function ($) {
+    $('.search-form').on('submit', function (e) {
+        var keyword = $('.search-form-input[name="wd"]').val();
+        window.location = 'https://www.baidu.com/s?wd=site:yoursite.com ' + keyword;
+        return false;
+    });
+})(jQuery);
 </script>
-
-<script src="/js/insight.js"></script>
-
-
 
 
 
