@@ -17,16 +17,20 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>归档 | Hexo</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <title>docker软件部署 | Hexo</title>
+  <meta name="description" content="应用部署mysql部署1.拉取镜像 docker pull mysql 2.创建容器 docker run -di –name&#x3D;mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD&#x3D;123456 mysql -p 代表端口映射 格式为 宿主机IP：容器运行ip -e 代表添加环境变量 MYSQL_ROOT_PASSWORD 是root用户的登录密码 3.进入sql容器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker软件部署">
+<meta property="og:url" content="http://yoursite.com/2020/04/19/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="博客">
+<meta property="og:description" content="应用部署mysql部署1.拉取镜像 docker pull mysql 2.创建容器 docker run -di –name&#x3D;mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD&#x3D;123456 mysql -p 代表端口映射 格式为 宿主机IP：容器运行ip -e 代表添加环境变量 MYSQL_ROOT_PASSWORD 是root用户的登录密码 3.进入sql容器">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-18T22:55:24.547Z">
+<meta property="article:modified_time" content="2020-04-12T17:43:05.740Z">
 <meta property="article:author" content="张 木木">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/archives/index.html">
+  <link rel="canonical" href="http://yoursite.com/2020/04/19/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/index.html">
   
     <link rel="alternate" href="/atom.xml" title="博客" type="application/atom+xml">
   
@@ -308,138 +312,195 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档</h1>
-	      <p class="text-muted">共 10 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
+  <div class="content">
+  <article id="post-docker软件部署" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
   
+    <h1 class="article-title" itemprop="name">
+      docker软件部署
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/04/19/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/" class="article-date">
+	  <time datetime="2020-04-18T22:55:24.547Z" itemprop="datePublished">2020-04-19</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/19/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="应用部署"><a href="#应用部署" class="headerlink" title="应用部署"></a>应用部署</h1><h2 id="mysql部署"><a href="#mysql部署" class="headerlink" title="mysql部署"></a>mysql部署</h2><p>1.拉取镜像</p>
+<p>docker pull mysql</p>
+<p>2.创建容器</p>
+<p>docker run -di –name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql</p>
+<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
+<p>-e 代表添加环境变量 MYSQL_ROOT_PASSWORD 是root用户的登录密码</p>
+<p>3.进入sql容器</p>
+<p>docker exec -it mysql /bin/bash</p>
+<p>4.登录mysql</p>
+<p>mysql -u root -p </p>
+<p>5.远程登录mysql</p>
+<h2 id="tomcat部署"><a href="#tomcat部署" class="headerlink" title="tomcat部署"></a>tomcat部署</h2><p>1.拉取镜像</p>
+<p>docker pull tomcat</p>
+<p>2.创建容器</p>
+<p>docker run -di –name=mytomcat -p 8081:8080 -v /usr/local/webapps:/usr/local/tomcat/webapps tomcat</p>
+<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
+<p>-v 代目录映射</p>
+<p>3.进入sql容器</p>
+<p>docker exec -it mytomcat /bin/bash</p>
+<h2 id="nginx部署"><a href="#nginx部署" class="headerlink" title="nginx部署"></a>nginx部署</h2><p>1.拉取镜像</p>
+<p>docker pull nginx</p>
+<p>2.创建容器</p>
+<p>docker run -di –name=mynginx -p 80:80 nginx</p>
+<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
+<p>主要修改config文件</p>
+<h3 id="redis部署"><a href="#redis部署" class="headerlink" title="redis部署"></a>redis部署</h3><p>1.拉取镜像</p>
+<p>docker pull redis</p>
+<p>2.创建容器</p>
+<p>docker run -di –name=myredis -p 6379:6379 redis</p>
+<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
+<p>主要修改config文件</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2020/04/19/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/" title="docker软件部署" target="_blank" rel="external">http://yoursite.com/2020/04/19/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">张 木木</span><small class="ml-1x">保持一个敬畏之心</small></a></h3>
+        <div>保持一个敬畏之心</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
   
     
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
     
-      
-      
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2020" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2020
-            </a>
-            <!-- <a href="/archives/2020" class="archive-year">2020</a> -->
-          </h3>
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/04/19/docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/" title="docker私有仓库"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/04/19/docker%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/" title="docker备份与迁移"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div id="collapse2020" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2020">
-        <div class="panel-body">
-          <div class="collection">
-    
-    
-<a href="/2020/04/19/grafana/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-19T14:57:48.034Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> grafana
-</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-  
-    
-    
-    
-<a href="/2020/04/19/cAdvisor/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-19T14:57:48.033Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> cAdvisor
-</a>
 
-
-  
-    
-    
-    
-<a href="/2020/04/19/influxdb/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-19T14:57:48.032Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> influxdb
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/19/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%8A%80%E5%B7%A7/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-19T14:57:48.031Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> lambda表达式技巧
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/19/jenkins%E5%AE%89%E8%A3%85/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-19T14:57:48.029Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> jenkins安装
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/19/%E6%89%8B%E5%8A%A8%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E5%B9%B6%E6%89%93%E5%8C%85%E6%88%90%E9%95%9C%E5%83%8F/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-19T14:57:48.026Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 手动上传代码并打包成镜像
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/19/docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-18T22:55:24.547Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> docker私有仓库
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/19/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-18T22:55:24.547Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> docker软件部署
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/19/docker%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-18T22:55:24.546Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> docker备份与迁移
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/19/docker%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-18T22:55:24.546Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> docker常见命令
-</a>
-
-
-  
-  
-    </div></div></div></section>
-  
-
-	    </div>
-  	</article>
-  	 	
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -490,6 +551,37 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 

@@ -17,16 +17,20 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>归档 | Hexo</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <title>cAdvisor | Hexo</title>
+  <meta name="description" content="cAdvisor即为采集数据库中数据 然后插进 influxdb数据库中 docker pull google&#x2F;cadvisor docker run –volume&#x3D;&#x2F;:&#x2F;rootfs:ro  –volume&#x3D;&#x2F;var&#x2F;run:&#x2F;var&#x2F;run:rw  –volume&#x3D;&#x2F;sys:&#x2F;sys:ro   –volume&#x3D;&#x2F;var&#x2F;lib&#x2F;docker&#x2F;:&#x2F;var&#x2F;lib&#x2F;docker:ro –publ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cAdvisor">
+<meta property="og:url" content="http://yoursite.com/2020/04/19/cAdvisor/index.html">
 <meta property="og:site_name" content="博客">
+<meta property="og:description" content="cAdvisor即为采集数据库中数据 然后插进 influxdb数据库中 docker pull google&#x2F;cadvisor docker run –volume&#x3D;&#x2F;:&#x2F;rootfs:ro  –volume&#x3D;&#x2F;var&#x2F;run:&#x2F;var&#x2F;run:rw  –volume&#x3D;&#x2F;sys:&#x2F;sys:ro   –volume&#x3D;&#x2F;var&#x2F;lib&#x2F;docker&#x2F;:&#x2F;var&#x2F;lib&#x2F;docker:ro –publ">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-19T14:57:48.033Z">
+<meta property="article:modified_time" content="2020-04-19T11:00:23.263Z">
 <meta property="article:author" content="张 木木">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/archives/index.html">
+  <link rel="canonical" href="http://yoursite.com/2020/04/19/cAdvisor/index.html">
   
     <link rel="alternate" href="/atom.xml" title="博客" type="application/atom+xml">
   
@@ -308,138 +312,172 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档</h1>
-	      <p class="text-muted">共 10 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
+  <div class="content">
+  <article id="post-cAdvisor" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
   
+    <h1 class="article-title" itemprop="name">
+      cAdvisor
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/04/19/cAdvisor/" class="article-date">
+	  <time datetime="2020-04-19T14:57:48.033Z" itemprop="datePublished">2020-04-19</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/19/cAdvisor/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="cAdvisor"><a href="#cAdvisor" class="headerlink" title="cAdvisor"></a>cAdvisor</h1><p>即为采集数据库中数据 然后插进 influxdb数据库中</p>
+<p>docker pull google/cadvisor</p>
+<p>docker run –volume=/:/rootfs:ro  –volume=/var/run:/var/run:rw  –volume=/sys:/sys:ro  </p>
+<p>–volume=/var/lib/docker/:/var/lib/docker:ro –publish=8080:8080 –detach=true </p>
+<p>–link  influxsrv:influxsrv –name=cadvisor  google/cadvisor -storage_driver=influxdb </p>
+<p>-storage_driver_db=cadvisor  -storage_driver_host=influxsrv:8086</p>
+<p>web 访问接口</p>
+<p><a href="http://192.168.124.10:8080/containers/" target="_blank" rel="noopener">http://192.168.124.10:8080/containers/</a></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2020/04/19/cAdvisor/" title="cAdvisor" target="_blank" rel="external">http://yoursite.com/2020/04/19/cAdvisor/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">张 木木</span><small class="ml-1x">保持一个敬畏之心</small></a></h3>
+        <div>保持一个敬畏之心</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
   
     
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
     
-      
-      
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2020" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2020
-            </a>
-            <!-- <a href="/archives/2020" class="archive-year">2020</a> -->
-          </h3>
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/04/19/grafana/" title="grafana"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/04/19/influxdb/" title="influxdb"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div id="collapse2020" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2020">
-        <div class="panel-body">
-          <div class="collection">
-    
-    
-<a href="/2020/04/19/grafana/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-19T14:57:48.034Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> grafana
-</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-  
-    
-    
-    
-<a href="/2020/04/19/cAdvisor/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-19T14:57:48.033Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> cAdvisor
-</a>
 
-
-  
-    
-    
-    
-<a href="/2020/04/19/influxdb/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-19T14:57:48.032Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> influxdb
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/19/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%8A%80%E5%B7%A7/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-19T14:57:48.031Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> lambda表达式技巧
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/19/jenkins%E5%AE%89%E8%A3%85/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-19T14:57:48.029Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> jenkins安装
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/19/%E6%89%8B%E5%8A%A8%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E5%B9%B6%E6%89%93%E5%8C%85%E6%88%90%E9%95%9C%E5%83%8F/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-19T14:57:48.026Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 手动上传代码并打包成镜像
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/19/docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-18T22:55:24.547Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> docker私有仓库
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/19/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-18T22:55:24.547Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> docker软件部署
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/19/docker%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-18T22:55:24.546Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> docker备份与迁移
-</a>
-
-
-  
-    
-    
-    
-<a href="/2020/04/19/docker%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2020-04-18T22:55:24.546Z" itemprop="datePublished">2020-04-19</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> docker常见命令
-</a>
-
-
-  
-  
-    </div></div></div></section>
-  
-
-	    </div>
-  	</article>
-  	 	
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -490,6 +528,37 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 

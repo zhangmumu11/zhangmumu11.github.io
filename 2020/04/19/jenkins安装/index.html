@@ -17,20 +17,20 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>docker软件部署 | Hexo</title>
-  <meta name="description" content="应用部署mysql部署1.拉取镜像 docker pull mysql 2.创建容器 docker run -di –name&#x3D;mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD&#x3D;123456 mysql -p 代表端口映射 格式为 宿主机IP：容器运行ip -e 代表添加环境变量 MYSQL_ROOT_PASSWORD 是root用户的登录密码 3.进入sql容器">
+  <title>jenkins安装 | Hexo</title>
+  <meta name="description" content="安装jenkins下载jenkins  rpm rpm -ivh jenkins名称 配置jenkins  vi &#x2F;etc&#x2F;sysconfig&#x2F;jenkins 发生故障 Job for jenkins.service failed because the control process exited with error code. See “systemctl status jenkins.se">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker软件部署">
-<meta property="og:url" content="http://yoursite.com/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/index.html">
+<meta property="og:title" content="jenkins安装">
+<meta property="og:url" content="http://yoursite.com/2020/04/19/jenkins%E5%AE%89%E8%A3%85/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="应用部署mysql部署1.拉取镜像 docker pull mysql 2.创建容器 docker run -di –name&#x3D;mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD&#x3D;123456 mysql -p 代表端口映射 格式为 宿主机IP：容器运行ip -e 代表添加环境变量 MYSQL_ROOT_PASSWORD 是root用户的登录密码 3.进入sql容器">
+<meta property="og:description" content="安装jenkins下载jenkins  rpm rpm -ivh jenkins名称 配置jenkins  vi &#x2F;etc&#x2F;sysconfig&#x2F;jenkins 发生故障 Job for jenkins.service failed because the control process exited with error code. See “systemctl status jenkins.se">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-12T16:17:55.364Z">
-<meta property="article:modified_time" content="2020-04-12T17:43:05.740Z">
+<meta property="article:published_time" content="2020-04-19T14:57:48.029Z">
+<meta property="article:modified_time" content="2020-04-18T17:32:32.693Z">
 <meta property="article:author" content="张 木木">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/index.html">
+  <link rel="canonical" href="http://yoursite.com/2020/04/19/jenkins%E5%AE%89%E8%A3%85/index.html">
   
     <link rel="alternate" href="/atom.xml" title="博客" type="application/atom+xml">
   
@@ -213,7 +213,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -232,10 +232,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2020/04/14/docker%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/" class="title">docker备份与迁移</a>
+                <a href="/2020/04/19/grafana/" class="title">grafana</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-04-14T00:58:52.720Z" itemprop="datePublished">2020-04-14</time>
+                <time datetime="2020-04-19T14:57:48.034Z" itemprop="datePublished">2020-04-19</time>
               </p>
             </div>
           </li>
@@ -247,10 +247,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2020/04/14/docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/" class="title">docker私有仓库</a>
+                <a href="/2020/04/19/cAdvisor/" class="title">cAdvisor</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-04-14T00:58:52.720Z" itemprop="datePublished">2020-04-14</time>
+                <time datetime="2020-04-19T14:57:48.033Z" itemprop="datePublished">2020-04-19</time>
               </p>
             </div>
           </li>
@@ -262,10 +262,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/" class="title">docker软件部署</a>
+                <a href="/2020/04/19/influxdb/" class="title">influxdb</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-04-12T16:17:55.364Z" itemprop="datePublished">2020-04-13</time>
+                <time datetime="2020-04-19T14:57:48.032Z" itemprop="datePublished">2020-04-19</time>
               </p>
             </div>
           </li>
@@ -277,10 +277,25 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2020/04/07/docker%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" class="title">docker常见命令</a>
+                <a href="/2020/04/19/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%8A%80%E5%B7%A7/" class="title">lambda表达式技巧</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-04-07T03:53:56.444Z" itemprop="datePublished">2020-04-07</time>
+                <time datetime="2020-04-19T14:57:48.031Z" itemprop="datePublished">2020-04-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/04/19/jenkins%E5%AE%89%E8%A3%85/" class="title">jenkins安装</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-04-19T14:57:48.029Z" itemprop="datePublished">2020-04-19</time>
               </p>
             </div>
           </li>
@@ -298,14 +313,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-docker软件部署" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-jenkins安装" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      docker软件部署
+      jenkins安装
     </h1>
   
 
@@ -313,8 +328,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/" class="article-date">
-	  <time datetime="2020-04-12T16:17:55.364Z" itemprop="datePublished">2020-04-13</time>
+	<a href="/2020/04/19/jenkins%E5%AE%89%E8%A3%85/" class="article-date">
+	  <time datetime="2020-04-19T14:57:48.029Z" itemprop="datePublished">2020-04-19</time>
 	</a>
 </span>
         
@@ -322,43 +337,36 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/19/jenkins%E5%AE%89%E8%A3%85/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="应用部署"><a href="#应用部署" class="headerlink" title="应用部署"></a>应用部署</h1><h2 id="mysql部署"><a href="#mysql部署" class="headerlink" title="mysql部署"></a>mysql部署</h2><p>1.拉取镜像</p>
-<p>docker pull mysql</p>
-<p>2.创建容器</p>
-<p>docker run -di –name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql</p>
-<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
-<p>-e 代表添加环境变量 MYSQL_ROOT_PASSWORD 是root用户的登录密码</p>
-<p>3.进入sql容器</p>
-<p>docker exec -it mysql /bin/bash</p>
-<p>4.登录mysql</p>
-<p>mysql -u root -p </p>
-<p>5.远程登录mysql</p>
-<h2 id="tomcat部署"><a href="#tomcat部署" class="headerlink" title="tomcat部署"></a>tomcat部署</h2><p>1.拉取镜像</p>
-<p>docker pull tomcat</p>
-<p>2.创建容器</p>
-<p>docker run -di –name=mytomcat -p 8081:8080 -v /usr/local/webapps:/usr/local/tomcat/webapps tomcat</p>
-<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
-<p>-v 代目录映射</p>
-<p>3.进入sql容器</p>
-<p>docker exec -it mytomcat /bin/bash</p>
-<h2 id="nginx部署"><a href="#nginx部署" class="headerlink" title="nginx部署"></a>nginx部署</h2><p>1.拉取镜像</p>
-<p>docker pull nginx</p>
-<p>2.创建容器</p>
-<p>docker run -di –name=mynginx -p 80:80 nginx</p>
-<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
-<p>主要修改config文件</p>
-<h3 id="redis部署"><a href="#redis部署" class="headerlink" title="redis部署"></a>redis部署</h3><p>1.拉取镜像</p>
-<p>docker pull redis</p>
-<p>2.创建容器</p>
-<p>docker run -di –name=myredis -p 6379:6379 redis</p>
-<p>-p 代表端口映射 格式为 宿主机IP：容器运行ip</p>
-<p>主要修改config文件</p>
+        <h3 id="安装jenkins"><a href="#安装jenkins" class="headerlink" title="安装jenkins"></a>安装jenkins</h3><p>下载jenkins  rpm</p>
+<p>rpm -ivh jenkins名称</p>
+<p>配置jenkins </p>
+<p>vi /etc/sysconfig/jenkins</p>
+<p>发生故障</p>
+<p>Job for jenkins.service failed because the control process exited with error code. See “systemctl status jenkins.service” and “journalctl -xe” for details.</p>
+<p>systemctl status jenkins.service</p>
+<p>环境变量问题</p>
+<p>echo $JAVA_HOME</p>
+<p>我的为</p>
+<p>/usr/local/dockerjdk8/jdk1.8.0_171</p>
+<p>vi /etc/sysconfig/jenkins</p>
+<p>candidates=”<br>/etc/alternatives/java<br>/usr/lib/jvm/java-1.8.0/bin/java<br>/usr/lib/jvm/jre-1.8.0/bin/java<br>/usr/lib/jvm/java-1.7.0/bin/java<br>/usr/lib/jvm/jre-1.7.0/bin/java<br>/usr/bin/java</p>
+<p>添加最后一行</p>
+<p>/usr/local/dockerjdk8/jdk1.8.0_171/bin/java</p>
+<p>重启jenkins</p>
+<p>systemctl start jenkins</p>
+<p>安装推荐插件</p>
+<p>搭建服务器的maven环境</p>
+<p>安装maven</p>
+<p>添加maven 仓库 配置setting文件</p>
+<p>配置全局指令</p>
+<p>配置 maven  git jdk 服务名及路径</p>
+<h4 id="gogs-安装"><a href="#gogs-安装" class="headerlink" title="gogs 安装"></a>gogs 安装</h4><p>gogs是git的图形化界面</p>
 
       
     </div>
@@ -368,7 +376,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/" title="docker软件部署" target="_blank" rel="external">http://yoursite.com/2020/04/13/docker%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2/</a>
+      <a href="http://yoursite.com/2020/04/19/jenkins%E5%AE%89%E8%A3%85/" title="jenkins安装" target="_blank" rel="external">http://yoursite.com/2020/04/19/jenkins%E5%AE%89%E8%A3%85/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -415,12 +423,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2020/04/14/docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/" title="docker私有仓库"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2020/04/19/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%8A%80%E5%B7%A7/" title="lambda表达式技巧"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2020/04/07/docker%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" title="docker常见命令"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/04/19/%E6%89%8B%E5%8A%A8%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E5%B9%B6%E6%89%93%E5%8C%85%E6%88%90%E9%95%9C%E5%83%8F/" title="手动上传代码并打包成镜像"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
